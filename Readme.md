@@ -2,7 +2,7 @@
 
 A minimalist, high-performance TCP Server written entirely in **ARM64 (AArch64) Assembly** for Linux. This project bypasses standard C libraries (libc) to interact directly with the kernel via software interrupts.
 
-## Overview
+### Overview
 
 This project demonstrates low-level socket programming using the Linux syscall interface. It implements the standard Berkeley Sockets lifecycle:
 
@@ -12,7 +12,7 @@ This project demonstrates low-level socket programming using the Linux syscall i
 4. **Connection Acceptance** (`sys_accept`)
 5. **I/O Loop** (`sys_read` & `sys_write`)
 
-## Technical Specifications
+### Technical Specifications
 
 * **Architecture:** ARM64 (AArch64)
 * **Platform:** Linux
@@ -31,9 +31,7 @@ This project demonstrates low-level socket programming using the Linux syscall i
 | `read` | 63 | Ingest data into the BSS buffer |
 | `write` | 64 | Echo data back to the client |
 
----
-
-## Build & Run
+### Build & Run
 
 To assemble and link this project, you will need `as` (GNU Assembler) and `ld` (GNU Linker).
 
