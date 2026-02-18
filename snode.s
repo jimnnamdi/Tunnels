@@ -21,7 +21,7 @@ type listen_to_conns, %function
     error_mesg_len = . - error_mesg
 
 .section .bss 
-    buffer 256
+    buffer .skip 255    ; static allocation of 255 bytes of mem
 
 create_tcp_sockets:
 
@@ -90,7 +90,7 @@ loop:
     mov x8, 63
     mov x0, x20 
     adr x1, buffer
-    mov x2, 256
+    mov x2, 255
     svc 0
 
     mov x2, x0          ; the current N bytes from the read operation
