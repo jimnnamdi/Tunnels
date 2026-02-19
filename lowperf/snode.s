@@ -46,7 +46,8 @@ bind_tcp_sockets:
     ; we want to pass the fd, and then the packet structure ?
     
     mov x0, x19 
-    adr x1, =csockaddr
+    adrp x1, csockaddr
+    add x1, x1, :lo12:csockaddr
     mov x2, 16          ; 16 bytes
     mov w8, 200         ; syscall for bind
     svc 0
@@ -75,7 +76,8 @@ accept_conns:
     
     mov x8, 202
     mov x0, x19 
-    adr x1, =csockaddr
+    adrp x1, csockaddr
+    add x1, x1, :lo12:csockaddr
     mov x2, 16
     svc 0
 
